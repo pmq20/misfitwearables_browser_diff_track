@@ -37,38 +37,42 @@ function doWithCurrentPageBeforeScroll() {
 function doWithNextPageBeforeScroll() {}
 
 function doAfterScroll() {
-    switch (global_info.current_page) {
-    case -1:
-        intro_shine_obj.initPanel(), shine_and_you_obj.initPanel();
-        break;
-    case 0:
-        shine_and_you_obj.initPanel(), intro_shine_obj.initPanel();
-        break;
-    case 1:
-        wear_it_any_where_obj.initPanel();
-        break;
-    case 2:
-        effortless_use_obj.initPanel();
-        break;
-    case 3:
-        your_personal_timeline_obj.initPanel();
-        break;
-    case 5:
-        built_to_last_a_lifetime_obj.initPanel();
-        break;
-    case 4:
-        more_than_a_tracker_obj.initPanel(), more_than_a_tracker_obj.addAnimation();
-        break;
-    case 6:
-        accessories_obj.initPanel();
-        break;
-    case 7:
-        product_spec_obj.initPanel();
-        break;
-    case 8:
-        buy_your_shine_now_obj.initPanel();
-        break;
-    default:
+    try {
+        switch (global_info.current_page) {
+        case -1:
+            intro_shine_obj.initPanel(), shine_and_you_obj.initPanel();
+            break;
+        case 0:
+            shine_and_you_obj.initPanel(), intro_shine_obj.initPanel();
+            break;
+        case 1:
+            wear_it_any_where_obj.initPanel();
+            break;
+        case 2:
+            effortless_use_obj.initPanel();
+            break;
+        case 3:
+            your_personal_timeline_obj.initPanel();
+            break;
+        case 5:
+            built_to_last_a_lifetime_obj.initPanel();
+            break;
+        case 4:
+            more_than_a_tracker_obj.initPanel(), more_than_a_tracker_obj.addAnimation();
+            break;
+        case 6:
+            accessories_obj.initPanel();
+            break;
+        case 7:
+            product_spec_obj.initPanel();
+            break;
+        case 8:
+            buy_your_shine_now_obj.initPanel();
+            break;
+        default:
+        }
+    } catch (e) {
+        console.log("error doAfterScroll")
     }
 }
 
@@ -109,9 +113,7 @@ function reDrawDotNav() {
 function updateURL(e, t) {
     try {
         window.history.replaceState(t, e, "#" + t)
-    } catch (n) {
-        console.log("error updateURL")
-    }
+    } catch (n) {}
 }
 
 function updateCurrentURL() {
@@ -179,21 +181,24 @@ function movetoCurrentPage(e, t) {
     if (global_info.current_page == -1) movetoTop(e, t);
     else {
         var n = global_info.screens[global_info.current_page],
-            r = $("body").scrollTop();
+            r = $("html").scrollTop();
         doWithNextPageBeforeScroll();
-        var i = $("#" + n).offset().top;
-        global_info.current_page == 0 && (i = global_info.top_bar_height), i != r ? (updateCurrentURL(), reDrawDotNav(), $("body").animate({
-            scrollTop: i
-        }, e, "easeInOutExpo", function () {
-            resetIsTransform(), t && typeof t == "function" && t()
-        })) : resetIsTransform()
+        if ($("#" + n).offset().top != r) {
+            updateCurrentURL(), reDrawDotNav();
+            var i = $("#" + n).offset().top;
+            $("html").animate({
+                scrollTop: i
+            }, e, "easeInOutExpo", function () {
+                resetIsTransform(), t && typeof t == "function" && t()
+            })
+        } else resetIsTransform()
     }
 }
 
 function movetoTop(e, t) {
     global_info.current_page = -1, reDrawDotNav();
-    var n = $("body").scrollTop();
-    doWithNextPageBeforeScroll(), n != 0 ? (updateCurrentURL(), $("body").animate({
+    var n = $("html").scrollTop();
+    doWithNextPageBeforeScroll(), n != 0 ? (updateCurrentURL(), $("html").animate({
         scrollTop: 0
     }, e, "easeInOutExpo", function () {
         resetIsTransform(), t && typeof t == "function" && t()
@@ -204,18 +209,6 @@ function resetIsTransform() {
     clearRequestTimeout(id_reset_istransform), id_reset_istransform = requestTimeout(function () {
         animation.isTransform = !1
     }, 200)
-}
-
-function wheel(e) {
-    var t = 0,
-        n = 0;
-    e || (e = window.event), e.wheelDeltaY ? t = e.wheelDeltaY / 120 : e.detail && (t = -e.detail), e.wheelDeltaX ? n = e.wheelDeltaX / 120 : e.detail && (n = -e.detail), !animation.isTransform && !animation.is_transform_left_right ? (isInit || (clearRequestTimeout(id_reset_init), id_reset_init = requestTimeout(function () {
-        isHandle = !0
-    }, 60), clearRequestTimeout(id_reset_handle), id_reset_handle = requestTimeout(handleDelta, 61), clearRequestTimeout(id_reset_all), id_reset_all = requestTimeout(function () {
-        arr_top_down_all.length < 85 ? (isInit = !1, isHandle = !1, arr_top_down.length = 0, arr_left_right.length = 0, arr_top_down_all.length = 0) : requestTimeout(function () {
-            isInit = !1, isHandle = !1, arr_top_down.length = 0, arr_left_right.length = 0, arr_top_down_all.length = 0
-        }, 700)
-    }, 800), isInit = !0), isHandle || (arr_top_down.push(t), arr_left_right.push(n))) : arr_top_down_all.push(t), e.preventDefault && e.preventDefault(), e.returnValue = !1
 }
 
 function handleDelta() {
@@ -348,8 +341,10 @@ var global_info = {
                         s();
                         return
                     }
-                    t.on("timeupdate", function () {
-                        t.bufferedPercent() > .8 && !i && ($("#product_specs_background").addClass("lazy_background"), t.pause(), $(".spec_button").hide(), $("#product_specs_loading_screen").fadeOut(function () {
+                    t.on("loadeddata", function () {
+                        t.play()
+                    }), t.on("timeupdate", function () {
+                        t.bufferedPercent() > .998 && !i && ($("#product_specs_background").addClass("lazy_background"), t.pause(), $(".spec_button").hide(), $("#product_specs_loading_screen").fadeOut(function () {
                             t.play()
                         }), i = !0)
                     }), t.on("ended", function () {
@@ -398,7 +393,6 @@ var global_info = {
                     smoothHeight: !1,
                     slideshow: !1,
                     slideshowSpeed: r,
-                    animationSpeed: 800,
                     touch: !0,
                     start: function (t) {
                         $("#wear_it_anywhere_loading_screen").fadeOut(), e.play(), $("#wear_it_anywhere .pause_div").click(function () {
@@ -464,7 +458,6 @@ var global_info = {
                     smoothHeight: !1,
                     slideshow: !1,
                     slideshowSpeed: r,
-                    animationSpeed: 800,
                     touch: !0,
                     start: function (t) {
                         $("#built_to_last_a_lifetime_loading_screen").fadeOut(), e.play(), $("#built_to_last_a_lifetime .pause_div").click(function () {
@@ -674,7 +667,7 @@ var global_info = {
                     n.on("loadstart", function () {
                         n.play()
                     }), n.on("progress", function () {
-                        n.bufferedPercent() > .85 && !a && (n.currentTime(0), $("#your_personal_timeline_loading_screen").fadeOut(function () {
+                        n.buffered().end(0) > 27 && !a && (n.currentTime(0), $("#your_personal_timeline_loading_screen").fadeOut(function () {
                             n.play(), a = !0
                         }))
                     }), n.on("timeupdate", function () {
@@ -868,7 +861,6 @@ var global_info = {
                     smoothHeight: !1,
                     slideshow: !1,
                     slideshowSpeed: f,
-                    animationSpeed: 800,
                     touch: !0,
                     start: function (t) {
                         $("#more_than_a_tracker_loading_screen").fadeOut(), e.play(), $("#more_than_a_tracker .pause_div").click(function () {
@@ -951,7 +943,9 @@ var global_info = {
         }
     }();
 $(window).load(function () {
-    global_info.current_page = calCurrentPageIndex($("body").scrollTop()), reDrawDotNav(), doAfterScroll(), $("#flex_wear_it_anywhere #list_carousels").click(function (e) {
+    global_info.current_page = calCurrentPageIndex($("html").scrollTop()), reDrawDotNav(), doAfterScroll(), $(window).scroll(function () {
+        return global_info.is_first_load && (global_info.current_page = calCurrentPageIndex($("html").scrollTop()), reDrawDotNav(), doAfterScroll(), global_info.is_first_load = !1), !1
+    }), $("#flex_wear_it_anywhere #list_carousels").click(function (e) {
         var t = $(window).width(),
             n = $(window).height();
         wear_it_any_where_obj.pause(), e.pageX < t / 2 ? wear_it_any_where_obj.slideByDirection("prev") : wear_it_any_where_obj.slideByDirection("next")
@@ -963,13 +957,12 @@ $(window).load(function () {
         var t = $(window).width(),
             n = $(window).height();
         more_than_a_tracker_obj.pause(), e.pageX < t / 2 ? more_than_a_tracker_obj.slideByDirection("prev") : more_than_a_tracker_obj.slideByDirection("next")
-    }), $("body").hover(function () {
+    }), $("html").hover(function () {
         var e = $(this).scrollTop(),
             t = global_info.screens[global_info.current_page],
             n = 0;
         t && (n = parseInt($("#" + t).css("top")));
         if (Math.abs(n - e) > 2) {
-            console.log(1);
             var r = calCurrentPageName(e);
             animation.isTransform || moveToPageByName(r)
         }
@@ -980,4 +973,17 @@ var isInit = !1,
     id_reset_init, id_reset_handle, id_reset_all, arr_top_down_all = [],
     arr_top_down = [],
     arr_left_right = [];
-window.addEventListener && window.addEventListener("DOMMouseScroll", wheel, !1), window.onmousewheel = document.onmousewheel = wheel;
+$("html").mousewheel(function (e, t, n, r) {
+    if (!animation.isTransform && !animation.is_transform_left_right) {
+        var i = r,
+            s = -n;
+        isInit || (clearRequestTimeout(id_reset_init), id_reset_init = requestTimeout(function () {
+            isHandle = !0
+        }, 60), clearRequestTimeout(id_reset_handle), id_reset_handle = requestTimeout(handleDelta, 61), clearRequestTimeout(id_reset_all), id_reset_all = requestTimeout(function () {
+            arr_top_down_all.length < 85 ? (isInit = !1, isHandle = !1, arr_top_down.length = 0, arr_left_right.length = 0, arr_top_down_all.length = 0) : requestTimeout(function () {
+                isInit = !1, isHandle = !1, arr_top_down.length = 0, arr_left_right.length = 0, arr_top_down_all.length = 0
+            }, 700)
+        }, 800), isInit = !0), isHandle || (arr_top_down.push(i), arr_left_right.push(s))
+    } else arr_top_down_all.push(i);
+    return e.preventDefault && e.preventDefault(), e.preventDefault(), !1
+});
