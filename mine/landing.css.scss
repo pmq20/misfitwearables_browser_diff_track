@@ -7,40 +7,48 @@
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    background-image: image-url("__ph/ui2/loading.gif");
+    background-image: url(http://assets.misfitwearables.com/assets/loading-0b213d99d29d2b14b4fc62ba6eab10b5.gif);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 138px 100px;
+    background-size: 138px 100px
+}
+
+.show_pop_up_top {
+    z-index: 1000
 }
 
 .container {
     width: auto;
     min-width: 600px;
-    max-width: 980px;
+    max-width: 980px
 }
 
-#footer, #menu_bar, .banner, .main_page {
+#flex_mainpage {
+    margin: 0 !important
+}
+
+#footer {
+    display: none
+}
+
+#footer,#menu_bar,.banner,.main_page {
     min-width: 600px;
-    min-height: 61px;
+    min-height: 400px
 }
 
-.main_page {
-    z-index: 3;
+.main_page,.banner {
+    overflow: hidden
 }
 
-.main_page, .banner {
-    overflow: hidden;
-}
-
-a, a:hover {
-    text-decoration: none;
+a,a:hover {
+    text-decoration: none
 }
 
 .absolute {
-    position: absolute;
+    position: absolute
 }
 
-.banner, .main_page, #buy_your_phantom_devices_now, #smart_home_gadgets {
+.banner,.main_page,#buy_your_shine_now,#shine_and_you {
     -webkit-transition: -webkit-transform 0.2s ease;
     -moz-transition: -moz-transform 0.2s ease;
     -o-transition: -o-transform 0.2s ease;
@@ -50,19 +58,27 @@ a, a:hover {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     -o-transform: translateY(0px);
-    -ms-transform: translateY(0px);
+    -ms-transform: translateY(0px)
 }
 
-#buy_your_phantom_devices_now.show_pop_up_bottom {
+.banner.show_pop_up_top,.main_page.show_pop_up_top,#shine_and_you.show_pop_up_top {
+    transform: translateY(117px);
+    -webkit-transform: translateY(117px);
+    -moz-transform: translateY(117px);
+    -o-transform: translateY(117px);
+    -ms-transform: translateY(117px)
+}
+
+#buy_your_shine_now.show_pop_up_bottom {
     transform: translateY(-117px);
     -webkit-transform: translateY(-117px);
     -moz-transform: translateY(-117px);
     -o-transform: translateY(-117px);
-    -ms-transform: translateY(-117px);
+    -ms-transform: translateY(-117px)
 }
 
 .flexslider {
-    background-color: none;
+    background-color: none
 }
 
 .flexslider .slides .carousel_board {
@@ -71,26 +87,24 @@ a, a:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    text-align: left;
+    text-align: left
 }
 
 .flexslider .slides .carousel_board .content {
-    margin-top: 25%;
+    margin-top: 25%
 }
 
 .flex-control-nav {
-  /*psvrdisable*/
-    visibility: hidden;
     width: inherit;
     position: absolute;
     text-align: center;
     left: 48%;
     bottom: 50px;
-    z-index: 100;
+    z-index: 100
 }
 
 .flex-control-nav li {
-    margin: 0 4px;
+    margin: 0 4px
 }
 
 .flex-control-paging li a {
@@ -107,14 +121,14 @@ a, a:hover {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
     background-color: transparent;
-    background-image: image-url("__ph/ui2/landing/primary/nav_dot_notchoose.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/nav_dot_notchoose-49671fe6225d5b785ad54dc494c1db70.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center
 }
 
-.flex-control-paging li a.flex-active, .flex-control-paging li a:hover {
+.flex-control-paging li a.flex-active,.flex-control-paging li a:hover {
     background-color: transparent;
-    background-image: image-url("__ph/ui2/landing/primary/nav_dot_choose.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/nav_dot_choose-c050a52762ddae647ecd5ba281dd84d7.png);
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1;
@@ -122,19 +136,22 @@ a, a:hover {
     -moz-opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    zoom: 1;
+    zoom: 1
 }
 
-#footer, .main_page, .banner {
-    position: absolute;
-    width: 100%;
+#flex_mainpage .flex-control-nav.custom_flex {
+    width: 10px !important;
+    left: auto !important;
+    bottom: none;
+    right: 50px !important;
+    top: 37% !important
 }
 
 .image_background img {
     width: 100%;
     position: absolute;
     min-width: 1024px;
-    height: auto;
+    height: auto
 }
 
 .image_background {
@@ -143,57 +160,57 @@ a, a:hover {
     z-index: 1;
     width: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center
 }
 
 .info_div {
     position: absolute;
     overflow: hidden;
-    z-index: 2;
+    z-index: 2
 }
 
 .info_div .title {
-    font-family: sans-serif;
+    font-family: 'GothamLight', sans-serif;
     font-size: 40px;
     color: #272727;
     line-height: 40px;
-    padding-top: 0pt;
+    padding-top: 0pt
 }
 
 .info_div .description {
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 20px;
     color: #272727;
     line-height: 20px;
-    text-align: left;
+    text-align: left
 }
 
 .info_div .subpanel_title {
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 20px;
     color: #161616;
     text-align: left;
-    line-height: 40px;
+    line-height: 40px
 }
 
 .product_button {
-    text-align: center;
+    text-align: center
 }
 
-.product_button p, .product_button span {
+.product_button p,.product_button span {
     padding: 11px 18px;
-    font-family: sans-serif;
+    font-family: "GothamBook", sans-serif;
     font-size: 16px;
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
     width: 167px;
     height: 36px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
 }
 
 #introduction_of_shine {
-    z-index: 2;
+    z-index: 2
 }
 
 #introduction_of_shine .info_div {
@@ -201,134 +218,132 @@ a, a:hover {
     position: absolute;
     overflow: hidden;
     z-index: 2;
-    top: 30%;
+    top: 30%
 }
 
 #info_shine_title {
     font-size: 40px;
     line-height: 40px;
-    color: #191919;
+    color: #191919
 }
 
 #info_shine_description {
     font-size: 15px;
-    color: #191919;
+    color: #191919
 }
 
 #info_shine_name {
-    font-family: sans-serif;
+    font-family: 'GothamMedium', sans-serif;
     font-size: 102px;
     color: #191919;
     padding-top: 0pt;
     text-transform: uppercase;
-    margin-left: -4px;
+    margin-left: -4px
 }
 
-#smart_home_gadgets_info_wrap {
+#shine_and_you_info_wrap {
     position: relative;
     z-index: 1;
     padding-top: 7%;
-    color: #ffffff;
+    color: #ffffff
 }
 
-#smart_home_gadgets_info_wrap .info_div {
+#shine_and_you_info_wrap .info_div {
     position: relative;
     text-align: center;
-    color: #ffffff;
+    color: #ffffff
 }
 
-#smart_home_gadgets_info_wrap .title {
+#shine_and_you_info_wrap .title {
     color: #4f4f4f;
     line-height: 37px;
-    color: #ffffff;
+    color: #ffffff
 }
 
-#smart_home_gadgets_collum_wrap {
+#shine_and_you_collum_wrap {
     position: relative;
     z-index: 2;
-    top: 105px;
+    top: 105px
 }
 
-#smart_home_gadgets_collum_wrap img {
+#shine_and_you_collum_wrap img {
     width: auto;
     height: 205px;
-    margin-bottom: 48px;
+    margin-bottom: 97px
 }
 
 .collum_content_wrap {
     position: relative;
     margin: 0 auto;
-    text-align: center;
+    text-align: center
 }
 
 .collum_content_wrap .headline {
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 30px;
-    color: #ffffff;
+    color: #ffffff
 }
 
 .collum_content_wrap .description {
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 15px;
     color: #ffffff;
     width: 250px;
-    margin: 20px auto;
+    margin: 20px auto
 }
 
-.smart_home_gadgets_collum {
+.shine_and_you_collum {
     width: 33.33%;
     height: 100%;
     min-width: 190px;
-    float: left;
+    float: left
 }
 
 .center {
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .right {
-    float: right;
+    float: right
 }
 
-#lighting_control #carousel0.lazy_background {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction3.jpg");
+#wear_it_anywhere #carousel0.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner1_mobile-4e09d3ea740a7e20ad1ecfb62ac5f4f1.jpg)
 }
 
-#lighting_control #carousel1.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner2.jpg");
+#wear_it_anywhere #carousel1.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner2_mobile-a972952db29b8ad2ac859d1fcaf936ae.jpg)
 }
 
-#lighting_control #carousel2.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner3.jpg");
+#wear_it_anywhere #carousel2.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner3_mobile-caeebab6a7a784e025f44023ea309135.jpg)
 }
 
-#lighting_control #carousel3.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner4.jpg");
+#wear_it_anywhere #carousel3.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner4_mobile-104bdbaf34339aae4702b20a1977cdf5.jpg)
 }
 
-#lighting_control #carousel4.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner5.jpg");
+#wear_it_anywhere #carousel4.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner5_mobile-aed33fb5ea1d95d979b2c1fa5fe88344.jpg)
 }
 
-#lighting_control .info_div {
+#wear_it_anywhere .info_div {
     position: inherit;
-    margin-top: 20%;
+    margin-top: 130px
 }
 
-#lighting_control_title {
+#wear_it_anywhere_title {
     color: #f7f7f7;
-    line-height: 40px;
+    line-height: 40px
 }
 
-#lighting_control_description {
+#wear_it_anywhere_description {
     color: #f7f7f7;
     line-height: 20px;
-    text-align: left;
+    text-align: left
 }
 
 div.timer {
-  /*psvrdisable*/
-    visibility: none;
     width: 40px;
     height: 40px;
     overflow: hidden;
@@ -342,7 +357,7 @@ div.timer {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
     zoom: 1;
     cursor: pointer;
-    z-index: 100;
+    z-index: 100
 }
 
 span.mask {
@@ -350,7 +365,7 @@ span.mask {
     position: absolute;
     width: 40px;
     height: 40px;
-    left: 0;
+    left: 0
 }
 
 span.rotator {
@@ -360,49 +375,42 @@ span.rotator {
     position: absolute;
     top: 0;
     left: -20px;
-    background: image-url("__ph/ui2/slider/rotator-grey.png") no-repeat;
+    background: url(http://assets.misfitwearables.com/assets/slider/rotator-grey-d1d35249db619df25d46fe1a8c1840bf.png) no-repeat;
     z-index: 3;
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
+    -ms-transform: rotate(0deg)
 }
 
 div.pause_div {
-  /*psvrdisable*/
-    visibility: hidden;
     width: 40px;
     height: 40px;
     overflow: hidden;
     position: absolute;
     bottom: 50px;
     right: 30px;
-    background: image-url("__ph/ui2/slider/play.png") no-repeat;
+    background: url(http://assets.misfitwearables.com/assets/slider/play-17f97554504cbf33e5181a7124ecd821.png) no-repeat;
     background-position: center;
     cursor: pointer;
-    z-index: 101;
+    z-index: 101
 }
 
 div.pause_div.play {
-    background-image: image-url("__ph/ui2/slider/stop.png");
+    background-image: url(http://assets.misfitwearables.com/assets/slider/stop-c4bbd1a1f4a600f5336ff41988bceac7.png)
 }
 
 div.timer.move {
-    right: 30px;
+    right: 30px
 }
 
 span.mask.move {
-    background: image-url("__ph/ui2/slider/timer-grey.png") repeat 0 0;
-}
-
-span.rotator {
-  /*psvrdisable*/
-    visibility: hidden;
+    background: url(http://assets.misfitwearables.com/assets/slider/timer-grey-6b2a417db55e7857c928edf1eba7a757.png) repeat 0 0
 }
 
 span.rotator.move {
-    left: 0px;
+    left: 0px
 }
 
 span.rotator.running {
@@ -415,14 +423,14 @@ span.rotator.running {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
+    -ms-transform: rotate(360deg)
 }
 
 .effortless_column {
-    cursor: pointer;
+    cursor: pointer
 }
 
-.effortless_image_background, .effortless_column {
+.effortless_image_background,.effortless_column {
     background-repeat: no-repeat;
     background-size: cover;
     width: 15%;
@@ -431,30 +439,35 @@ span.rotator.running {
     -moz-transition: width 1s ease;
     -o-transition: width 1s ease;
     -ms-transition: width 1s ease;
-    transition: width 1s ease;
+    transition: width 1s ease
 }
 
 #effortless_image_background_0 {
-    background-position: 62% 50%;
+    background-position: 76% 50%
 }
 
 #effortless_image_background_1 {
-    background-position: 67% 50%;
+    background-position: 82% 50%
 }
 
 #effortless_image_background_2 {
-    background-position: 85% 50%;
+    background-position: 37% 50%
 }
 
-.active .effortless_image_background, .effortless_column.active {
+.active .effortless_image_background,.effortless_column.active {
     width: 70%;
-    background-position: center;
+    background-position: center
 }
 
 #effortless_info_column {
     position: absolute;
     top: 78%;
-    left: -15%;
+    left: 5%;
+    transform: translate(-15%, 0px);
+    -webkit-transform: translate(-15%, 0px);
+    -moz-transform: translate(-15%, 0px);
+    -o-transform: translate(-15%, 0px);
+    -ms-transform: translate(-15%, 0px)
 }
 
 #effortless_use_sub_info {
@@ -466,49 +479,49 @@ span.rotator.running {
     zoom: 1;
     display: inline-block;
     vertical-align: top;
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     color: #000000;
     -webkit-transition: opacity 0.5s ease-in;
     -moz-transition: opacity 0.5s ease-in;
     -o-transition: opacity 0.5s ease-in;
     -ms-transition: opacity 0.5s ease-in;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in
 }
 
 #effortless_use_sub_info p {
     text-align: left;
     width: 300px;
-    margin-left: 10px;
+    margin-left: 10px
 }
 
-#effortless_use_sub_info, #effortless_use_title, #effortless_use_description {
+#effortless_use_sub_info,#effortless_use_title,#effortless_use_description {
     -webkit-transition: color 0.5s ease-in;
     -moz-transition: color 0.5s ease-in;
     -o-transition: color 0.5s ease-in;
     -ms-transition: color 0.5s ease-in;
-    transition: color 0.5s ease-in;
+    transition: color 0.5s ease-in
 }
 
 #value_info {
-    font-size: 50px;
+    font-size: 50px
 }
 
 #step_value {
-    font-family: sans-serif;
+    font-family: "GothamBook",sans-serif
 }
 
 #value_step {
     font-size: 15px;
-    line-height: 21px;
+    line-height: 21px
 }
 
 #value_conclusion {
     font-size: 15px;
-    line-height: 21px;
+    line-height: 21px
 }
 
 .black {
-    color: #000000 !important;
+    color: #000000 !important
 }
 
 #effortless_use_sub_info.show {
@@ -517,22 +530,22 @@ span.rotator.running {
     -moz-opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    zoom: 1;
+    zoom: 1
 }
 
 #effortless_use_shine_object {
-    background-image: image-url("__ph/ui2/landing/effortless_use/shine.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/effortless_use/shine-5447af6e200e96fca0ff689d2bd4499a.png);
     background-repeat: no-repeat;
     width: 87px;
     height: 87px;
     margin: 0 auto;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: top
 }
 
 .effortless_use_shine_light {
     position: absolute;
-    background-image: image-url("__ph/ui2/landing/effortless_use/dot_shine.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/effortless_use/dot_shine-a3e0bf701772e6b9eb73658536d8a392.png);
     background-repeat: no-repeat;
     width: 7px;
     height: 7px;
@@ -541,162 +554,162 @@ span.rotator.running {
     -moz-opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    zoom: 1;
+    zoom: 1
 }
 
 #number0 {
     left: 41px;
-    top: 3px;
+    top: 3px
 }
 
 #number1 {
     left: 59px;
-    top: 9px;
+    top: 9px
 }
 
 #number2 {
     left: 72px;
-    top: 22px;
+    top: 22px
 }
 
 #number3 {
     left: 78px;
-    top: 41px;
+    top: 41px
 }
 
 #number4 {
     left: 73px;
-    top: 60px;
+    top: 60px
 }
 
 #number5 {
     left: 60px;
-    top: 73px;
+    top: 73px
 }
 
 #number6 {
     left: 41px;
-    top: 79px;
+    top: 79px
 }
 
 #number7 {
     left: 22px;
-    top: 73px;
+    top: 73px
 }
 
 #number8 {
     left: 8px;
-    top: 60px;
+    top: 60px
 }
 
 #number9 {
     left: 3px;
-    top: 41px;
+    top: 41px
 }
 
 #number10 {
     left: 8px;
-    top: 22px;
+    top: 22px
 }
 
 #number11 {
     left: 23px;
-    top: 8px;
+    top: 8px
 }
 
 #effortless_use_title {
     font-size: 40px;
-    color: #000000;
+    color: #000000
 }
 
 #effortless_use_description {
-    font-family: sans-serif;
+    font-family: 'GothamLight', sans-serif;
     font-size: 15px;
     color: #000000;
     margin-top: 13px;
-    width: 400px;
+    width: 400px
 }
 
 #effortless_use .info_div {
-    top: 60px;
+    top: 60px
 }
 
-#operating_experiences .info_div {
+#built_to_last_a_lifetime .info_div {
     position: inherit;
-    padding-top: 20%;
+    padding-top: 90px
 }
 
-#operating_experiences .info_div .title {
-    color: #cdcdcd;
+#built_to_last_a_lifetime .info_div .title {
+    color: #cdcdcd
 }
 
-#operating_experiences .description {
+#built_to_last_a_lifetime .description {
     color: #cdcdcd;
-    line-height: 45px;
+    line-height: 45px
 }
 
 .adv {
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 2
 }
 
 .first_ads {
     padding-right: 13px !important;
     width: 60px !important;
-    display: inline-block !important;
+    display: inline-block !important
 }
 
 .second_ads {
     width: 115px !important;
-    display: inline-block !important;
+    display: inline-block !important
 }
 
-#environmental_control #flex_environmental_control {
-    z-index: 2;
+#more_than_a_tracker #flex_more_than_a_tracker {
+    z-index: 2
 }
 
-#environmental_control .info_div {
+#more_than_a_tracker .info_div {
     position: inherit;
-    top: 247px;
+    top: 247px
 }
 
-#environmental_control .title {
+#more_than_a_tracker .title {
     font-size: 30px;
     color: #d4d4d4;
-    padding-top: 0px;
+    padding-top: 0px
 }
 
-#environmental_control .description {
+#more_than_a_tracker .description {
     color: #d4d4d4;
-    margin-top: 13px;
+    margin-top: 13px
 }
 
-#environmental_control #time {
-    padding-top: 30px;
+#more_than_a_tracker #time {
+    padding-top: 30px
 }
 
-#environmental_control .time_now {
-    font-family: sans-serif;
+#more_than_a_tracker .time_now {
+    font-family: "GothamLight", sans-serif;
     font-size: 60px;
     color: #ea4a2e;
-    height: 60px;
+    height: 60px
 }
 
-#environmental_control #shine_time {
-    background-image: image-url("__ph/ui2/landing/environmental_control/shine.png");
+#more_than_a_tracker #shine_time {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/more_than_a_tracker/shine-b38fad4e0180e374ac2a504862b29aca.png);
     background-repeat: no-repeat;
     width: 770px;
     height: 562px;
     position: absolute;
     z-index: 0;
-    top: 14%;
-    margin-left: 280px;
-    margin-top: 0;
+    top: 0px;
+    margin-left: 360px;
+    margin-top: 70px
 }
 
-#environmental_control #shine_time .shine_time_light {
-    background-image: image-url("blank.png");
+#more_than_a_tracker #shine_time .shine_time_light {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/more_than_a_tracker/light_time-f75e3bf785b9dfdca3c6072cee297648.png);
     background-repeat: no-repeat;
     width: 12px;
     height: 12px;
@@ -706,240 +719,241 @@ span.rotator.running {
     -moz-opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    zoom: 1;
+    zoom: 1
 }
 
-#environmental_control #shine_time .number0 {
+#more_than_a_tracker #shine_time .number0 {
     left: 407px;
-    top: 145px;
+    top: 145px
 }
 
-#environmental_control #shine_time .number1 {
+#more_than_a_tracker #shine_time .number1 {
     left: 454px;
-    top: 157px;
+    top: 157px
 }
 
-#environmental_control #shine_time .number2 {
+#more_than_a_tracker #shine_time .number2 {
     left: 489px;
-    top: 192px;
+    top: 192px
 }
 
-#environmental_control #shine_time .number3 {
+#more_than_a_tracker #shine_time .number3 {
     left: 502px;
-    top: 240px;
+    top: 240px
 }
 
-#environmental_control #shine_time .number4 {
+#more_than_a_tracker #shine_time .number4 {
     left: 489px;
-    top: 287px;
+    top: 287px
 }
 
-#environmental_control #shine_time .number5 {
+#more_than_a_tracker #shine_time .number5 {
     left: 454px;
-    top: 322px;
+    top: 322px
 }
 
-#environmental_control #shine_time .number6 {
+#more_than_a_tracker #shine_time .number6 {
     left: 407px;
-    top: 335px;
+    top: 335px
 }
 
-#environmental_control #shine_time .number7 {
+#more_than_a_tracker #shine_time .number7 {
     left: 359px;
-    top: 322px;
+    top: 322px
 }
 
-#environmental_control #shine_time .number8 {
+#more_than_a_tracker #shine_time .number8 {
     left: 324px;
-    top: 287px;
+    top: 287px
 }
 
-#environmental_control #shine_time .number9 {
+#more_than_a_tracker #shine_time .number9 {
     left: 312px;
-    top: 240px;
+    top: 240px
 }
 
-#environmental_control #shine_time .number10 {
+#more_than_a_tracker #shine_time .number10 {
     left: 324px;
-    top: 192px;
+    top: 192px
 }
 
-#environmental_control #shine_time .number11 {
+#more_than_a_tracker #shine_time .number11 {
     left: 359px;
-    top: 157px;
+    top: 157px
 }
 
-#environmental_control #carousel0 .info_div {
+#more_than_a_tracker #carousel0 .info_div {
     display: inline-block;
     width: 490px;
     vertical-align: top;
-    padding-top: 15%;
+    padding-top: 25%
 }
 
-#environmental_control #carousel1 .info_div .subpanel_title {
+#more_than_a_tracker #carousel1 .info_div .subpanel_title {
     text-align: left;
     padding-top: 10%;
-    font-size: 20px;
+    font-size: 20px
 }
 
-#environmental_control #carousel2 .info_div {
+#more_than_a_tracker #carousel2 .info_div {
     padding-top: 10%;
-    font-size: 20px;
+    font-size: 20px
 }
 
 #time_container {
-    width: 1000px;
+    width: 1000px
 }
 
 .lazy_prepare {
     position: absolute;
     z-index: -2;
-    display: none;
+    display: none
 }
 
 .loading_screen {
-    position: absolute;
-    z-index: 2000;
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    background-image: image-url("__ph/ui2/loading.gif");
+    background-image: url(http://assets.misfitwearables.com/assets/loading-0b213d99d29d2b14b4fc62ba6eab10b5.gif);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 138px 100px;
+    background-size: 138px 100px
 }
 
 .lazy_background {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right bottom;
+    background-position: center;
+    height: 100%
 }
 
-#operating_experiences #carousel0.lazy_background {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction5.jpg");
+#built_to_last_a_lifetime #carousel0.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/built_to_last_a_lifetime/background1_mobile-d90dd38669648e53cc65a7790ace41dc.jpg)
 }
 
-#operating_experiences #carousel1.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/operating_experiences/background2.jpg");
+#built_to_last_a_lifetime #carousel1.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/built_to_last_a_lifetime/background2_mobile-5738f47314815bac7d9e2600ed408e57.jpg)
 }
 
-#operating_experiences #carousel2.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/operating_experiences/background3.jpg");
+#built_to_last_a_lifetime #carousel2.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/built_to_last_a_lifetime/background3_mobile-8ea462a7dc40ce9b4d94a1755dc3c963.jpg)
 }
 
-#lighting_control #carousel0.lazy_background {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction3.jpg");
+#wear_it_anywhere #carousel0.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner1_mobile-4e09d3ea740a7e20ad1ecfb62ac5f4f1.jpg)
 }
 
-#lighting_control #carousel1.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner2.jpg");
+#wear_it_anywhere #carousel1.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner2_mobile-a972952db29b8ad2ac859d1fcaf936ae.jpg)
 }
 
-#lighting_control #carousel2.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner3.jpg");
+#wear_it_anywhere #carousel2.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner3_mobile-caeebab6a7a784e025f44023ea309135.jpg)
 }
 
-#lighting_control #carousel3.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner4.jpg");
+#wear_it_anywhere #carousel3.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner4_mobile-104bdbaf34339aae4702b20a1977cdf5.jpg)
 }
 
-#lighting_control #carousel4.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/wear_it_everywhere/banner5.jpg");
+#wear_it_anywhere #carousel4.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/wear_it_everywhere/banner5_mobile-aed33fb5ea1d95d979b2c1fa5fe88344.jpg)
 }
 
-#environmental_control #carousel1.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/environmental_control/panel7_2.jpg");
+#more_than_a_tracker #carousel1.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/more_than_a_tracker/panel7_2_mobile-09e778a5e8552738b59c78675162373f.jpg)
 }
 
-#environmental_control #carousel2.lazy_background {
-//    background-image: image-url("__ph/ui2/landing/environmental_control/panel7_3.jpg");
+#more_than_a_tracker #carousel2.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/more_than_a_tracker/panel7_3_mobile-ca4e5fac7dddd1b23a6e6b5ff7355a77.jpg)
 }
 
-#environmental_control #carousel0 {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction4.jpg");
+#more_than_a_tracker #carousel0 {
+    background-image: none;
+    background-color: #060606
 }
 
 #introduction_of_shine_background.lazy_background {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction1.jpg");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/intro_shine/introduction1_mobile-e0b35d5555103d2bad3a2dee1c0ff739.jpg)
 }
 
-#smart_home_gadgets_background.lazy_background {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction2.jpg");
+#shine_and_you_background.lazy_background {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/shine_and_you/background_mobile-e84383316bfadc6927aadc500ab1f398.jpg)
 }
 
 #product_specs_background.lazy_background {
-    background-color: #ffffff;
+    background-color: #ffffff
 }
 
 #accessories_background.lazy_background {
-      background-image: image-url("blank.jpg");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/accessorize/background.jpg)
 }
 
 #effortless_image_background_0.lazy_background {
     position: absolute;
     float: none;
-    background-image: image-url("__ph/ui2/landing/effortless_use/1.jpg");
-    z-index: -1;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/effortless_use/1-4318f85a0b9cf3c10018477b9754f954.jpg);
+    z-index: -1
 }
 
 #effortless_image_background_1.lazy_background {
     position: absolute;
     float: none;
-    background-image: image-url("__ph/ui2/landing/effortless_use/2.jpg");
-    z-index: -1;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/effortless_use/2-a09f94e53d1c0d06e0654eb39946e8bf.jpg);
+    z-index: -1
 }
 
 #effortless_image_background_2.lazy_background {
     position: absolute;
     float: none;
-    background-image: image-url("__ph/ui2/landing/effortless_use/3.jpg");
-    z-index: -1;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/effortless_use/3-d5f332e85a1eb2d6a4ceee0421bda3a2.jpg);
+    z-index: -1
 }
 
 #accessories {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1
 }
 
 #accessories_info_wrap {
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 #accessories_info_wrap .info_div {
-    position: relative;
+    position: relative
 }
 
 #accessories_info_wrap .title {
     text-align: center;
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 40px;
     color: #202020;
     line-height: 37px;
-    padding-top: 70px;
+    padding-top: 70px
 }
 
 .accessories_column {
     position: relative;
     width: 25%;
-    float: left;
+    float: left
 }
 
 #accessories_collum_wrap {
     position: relative;
     z-index: 2;
-    top: 15%;
+    top: 15%
 }
 
 #accessories_collum_wrap img {
     position: relative;
     width: auto;
-    height: 300px;
-    margin-bottom: 20px;
+    height: 230px;
+    margin-bottom: 100px;
+    top: 68px;
     -webkit-transition: -webkit-transform 0.2s ease;
     -moz-transition: -moz-transform 0.2s ease;
     -o-transition: -o-transform 0.2s ease;
     -ms-transition: -ms-transform 0.2s ease;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease
 }
 
 #accessories_collum_wrap img.smaller {
@@ -947,7 +961,7 @@ span.rotator.running {
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     -o-transform: scale(0.9);
-    -ms-transform: scale(0.9);
+    -ms-transform: scale(0.9)
 }
 
 #accessories_collum_wrap img.hover {
@@ -955,35 +969,35 @@ span.rotator.running {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
-    -ms-transform: scale(1.2);
+    -ms-transform: scale(1.2)
 }
 
 .accessories_collum_content_wrap {
-    text-align: center;
+    text-align: center
 }
 
 .center {
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .right {
-    float: right;
+    float: right
 }
 
 .accessories_headline {
     margin-top: 10px;
-    font-family: sans-serif;
+    font-family: "GothamBook", sans-serif;
     font-size: 20px;
     color: #2a2a2a;
-    display: none;
+    display: none
 }
 
 .accessories_description {
     margin-top: 15px;
-    font-family: sans-serif;
+    font-family: "GothamBook", sans-serif;
     font-size: 13px;
     color: #2a2a2a;
-    display: none;
+    display: none
 }
 
 .color_button {
@@ -993,35 +1007,34 @@ span.rotator.running {
     -moz-border-radius: 100%;
     border-radius: 100%;
     width: 14px;
-    height: 14px;
+    height: 14px
 }
 
 #accessories_color_group {
-    display: none;
+    display: none
 }
 
 #black_leather_button {
-    background-color: #000000;
+    background-color: #000000
 }
 
 #tan_leather_button {
-    background-color: #fa2d07;
-    margin-left: 7px;
+    background-color: #fa2d07
 }
 
 #product_specs .info_div {
     margin-top: 55px;
     position: relative;
-    width: 100%;
+    width: 100%
 }
 
 #product_specs .info_div .title {
     font-size: 30px;
-    color: #272727;
+    color: #272727
 }
 
 #product_specs .info_div .description {
-    padding-top: 5px;
+    padding-top: 5px
 }
 
 #shine_detail {
@@ -1029,244 +1042,232 @@ span.rotator.running {
     left: 291px;
     top: 81px;
     width: 275px;
-    display: none;
+    display: none
 }
 
 .spec_screen_view {
-    position: relative;
+    position: relative
 }
 
 .spec_button {
     position: absolute;
-    display: none;
+    display: none
 }
 
 #spec_button_1 {
     left: 490px;
-    top: 295px;
+    top: 295px
 }
 
 #spec_button_3 {
     left: 478px;
-    top: 181px;
+    top: 181px
 }
 
 #spec_button_4 {
     left: 391px;
-    top: 199px;
+    top: 199px
 }
 
 #spec_button_5 {
     left: 360px;
-    top: 185px;
+    top: 185px
 }
 
 #spec_button_6 {
     left: 487px;
-    top: 81px;
+    top: 81px
 }
 
 #spec_button_7 {
     left: 357px;
-    top: 113px;
+    top: 113px
 }
 
 #spec_button_8 {
     left: 363px;
-    top: 97px;
+    top: 97px
 }
 
 #spec_button_9 {
     left: 348px;
-    top: 320px;
+    top: 320px
 }
 
 #spec_button_10 {
     left: 515px;
-    top: 85px;
+    top: 85px
 }
 
 #spec_button_11 {
     left: 490px;
-    top: 215px;
+    top: 215px
 }
 
 #line_1 {
     left: 16px;
-    top: 17px;
+    top: 17px
 }
 
 #line_3 {
     left: 19px;
-    top: 14px;
+    top: 14px
 }
 
 #line_4 {
     left: -427px;
-    top: 16px;
+    top: 16px
 }
 
 #line_5 {
     left: -399px;
-    top: -22px;
+    top: -22px
 }
 
 #line_6 {
     left: 17px;
-    top: -84px;
+    top: -84px
 }
 
 #line_7 {
     left: -384px;
-    top: -17px;
+    top: -17px
 }
 
 #line_8 {
     left: -392px;
-    top: 16px;
+    top: 16px
 }
 
 #line_9 {
     left: -393px;
-    top: 14px;
+    top: 14px
 }
 
 #line_10 {
     left: 15px;
-    top: -6px;
+    top: -6px
 }
 
 #line_11 {
     left: 15px;
-    top: 17px;
+    top: 17px
 }
 
 #info_spec_group_1 {
     left: 167px;
-    top: 62px;
+    top: 62px
 }
 
 #info_spec_group_3 {
     left: 176px;
-    top: -11px;
+    top: -11px
 }
 
 #info_spec_group_4 {
     left: -426px;
-    top: 49px;
+    top: 49px
 }
 
 #info_spec_group_5 {
     left: -398px;
-    top: -45px;
+    top: -45px
 }
 
 #info_spec_group_6 {
     top: -109px;
-    left: 182px;
+    left: 182px
 }
 
 #info_spec_group_7 {
     left: -383px;
-    top: -43px;
+    top: -43px
 }
 
 #info_spec_group_8 {
     top: 65px;
-    left: -392px;
+    left: -392px
 }
 
 #info_spec_group_9 {
     left: -390px;
-    top: 36px;
+    top: 36px
 }
 
 #info_spec_group_10 {
     left: 138px;
-    top: -31px;
+    top: -31px
 }
 
 #info_spec_group_11 {
     left: 163px;
-    top: 57px;
+    top: 57px
 }
 
 #info_1 {
-    width: 235px;
+    width: 235px
 }
 
 #info_10 {
-    width: 235px;
+    width: 235px
 }
 
 #info_11 {
-    width: 185px;
+    width: 185px
 }
 
 .spec_title {
-    font-family: sans-serif;
+    font-family: "GothamMedium", sans-serif;
     font-size: 16px;
     color: #272727;
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
 .spec_info {
-    font-family: sans-serif;
+    font-family: "GothamBook", sans-serif;
     font-size: 13px;
     color: #272727;
-    padding-top: 20px;
+    padding-top: 20px
 }
 
 .line {
-    display: none;
+    display: none
 }
 
 .info_spec_group {
     display: none;
-    width: 280px;
+    width: 280px
 }
 
-#buy_your_phantom_devices_now {
-    background-image: image-url("__ph/ui2/landing/intro_phantom/introduction6.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+#buy_your_shine_now {
+    background-color: #f0f0f0
 }
 
-#buy_your_phantom_devices_now #buy_headline {
+#buy_your_shine_now #buy_headline {
     position: relative;
-    margin-top: 51px;
+    margin-top: 51px
 }
 
-#buy_your_phantom_devices_now .images {
+#buy_your_shine_now .images {
     margin: 0 auto;
     width: 520px;
-    margin-top: 23px;
+    margin-top: 23px
 }
 
-#buy_your_phantom_devices_now #buy_shine_button {
-    background-image: image-url("__ph/ui2/landing/buy_your_phantom_devices_now/btn_buynow.png");
+#buy_your_shine_now #buy_shine_button {
+    background-image: url(http://assets.misfitwearables.com/assets/landing/buy_your_shine_now/btn_buynow-b72fdc105831eab44baa3546afb01852.png);
     margin: 0 auto;
     white-space: nowrap;
     text-transform: uppercase;
-    padding-left: 52px;
+    padding-left: 52px
 }
 
-#buy_your_phantom_devices_now #buy_shine_button_group {
-    text-align: center;
-}
-#buy_shine_button_real_link{
-  display:inline-block;
-  width:214px;
-  height:214px;
-  background:transparent image-url('__ph/ui2/landing/intro_phantom/mall99.png') left top no-repeat;
-  &:hover{
-    background-position: 0 -214px; 
-  }
+#buy_your_shine_now #buy_shine_button_group {
+    text-align: center
 }
 
-#buy_your_phantom_devices_now #buy_bt {
-    position: relative;
+#buy_your_shine_now #buy_bt {
+    position: relative
 }
 
 #your_personal_timeline .info_div {
@@ -1274,33 +1275,33 @@ span.rotator.running {
     display: inline-block;
     vertical-align: top;
     margin-left: 100px;
-    width: 400px;
+    width: 400px
 }
 
 #your_personal_timeline .info_div .title {
     color: #3e3e3e;
-    padding-top: 0px;
+    padding-top: 0px
 }
 
 #your_personal_timeline .info_div .description {
     color: #d4d4d4;
-    padding-top: 23px;
+    padding-top: 23px
 }
 
 #your_personal_timeline #your_personal_timeline_background {
-    background-color: #eeeeee;
+    background-color: #eeeeee
 }
 
 #your_personal_timeline #shine_timeline {
     position: absolute;
-    background-image: image-url("__ph/ui2/landing/your_personal_timeline/shine.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/your_personal_timeline/shine-1f885e8855c762a988c9bd504cca2941.png);
     background-repeat: no-repeat;
     width: 136px;
     height: 136px;
     z-index: 10;
     top: 330px;
     left: -549px;
-    display: none;
+    display: none
 }
 
 #your_personal_timeline #iphone_timeline {
@@ -1308,16 +1309,16 @@ span.rotator.running {
     display: inline-block;
     width: 288px;
     height: 619px;
-    z-index: 5;
+    z-index: 5
 }
 
 #your_personal_timeline #iphone_timeline #iphone_cover {
-    background-image: image-url("__ph/ui2/landing/iphone.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/iphone-52644d0977b2ab7a1e1c5c8086244d54.png);
     background-repeat: no-repeat;
     position: absolute;
     width: 288px;
     height: 619px;
-    z-index: 2;
+    z-index: 2
 }
 
 #your_personal_timeline #iphone_timeline #screen_view {
@@ -1326,69 +1327,69 @@ span.rotator.running {
     height: 100%;
     left: 21px;
     top: -1px;
-    z-index: 1;
+    z-index: 1
 }
 
 #your_personal_timeline #iphone_timeline #video_timeline {
     width: 249px;
     top: 87px;
     position: absolute;
-    z-index: 1;
+    z-index: 1
 }
 
 .video_track_info {
     margin-top: 30px;
     color: #878787;
     display: none;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .video_track_info.active {
-    color: #e42300;
+    color: #e42300
 }
 
 .animation_title {
-    font-family: sans-serif;
-    font-size: 22px;
+    font-family: "GothamBook", sans-serif;
+    font-size: 22px
 }
 
 .animation_description {
-    font-family: sans-serif;
+    font-family: "GothamLight", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    padding-top: 10px;
+    padding-top: 10px
 }
 
 #could_not_be_simpler #iphone_cover {
-    background-image: image-url("__ph/ui2/landing/iphone.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/iphone-52644d0977b2ab7a1e1c5c8086244d54.png);
     position: absolute;
     top: 50px;
     left: 800px;
     width: 300px;
     height: 591px;
-    z-index: 1;
+    z-index: 1
 }
 
 #could_not_be_simpler #could_not_be_simpler_shine_object {
-    background-image: image-url("blank.jpg");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/shine.png);
     position: absolute;
     top: 200px;
     left: 200px;
     width: 300px;
     height: 300px;
-    z-index: 2;
+    z-index: 2
 }
 
 div#primary {
     z-index: 5;
     position: fixed;
-    right: 30px;
+    right: 30px
 }
 
-div#primary li, #share_widget_li {
+div#primary li,#share_widget_li {
     position: relative;
     height: 12px;
-    padding-bottom: 10px;
+    padding-bottom: 10px
 }
 
 div#primary a {
@@ -1402,25 +1403,25 @@ div#primary a {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
-    background-image: image-url("__ph/ui2/landing/primary/nav_dot_notchoose.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/nav_dot_notchoose-49671fe6225d5b785ad54dc494c1db70.png);
     background-repeat: no-repeat;
     background-position: center;
-    padding-left: 10px;
+    padding-left: 10px
 }
 
-div#primary a:hover, div#primary a.active {
+div#primary a:hover,div#primary a.active {
     opacity: 1;
     filter: "alpha(opacity=100)";
     -moz-opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
-    background-image: image-url("__ph/ui2/landing/primary/nav_dot_choose.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/nav_dot_choose-c050a52762ddae647ecd5ba281dd84d7.png)
 }
 
 div#primary p {
     display: none;
-    font-family: sans-serif;
+    font-family: 'GothamMedium', sans-serif;
     font-size: 12px;
     color: #dcdcdc;
     position: absolute;
@@ -1429,8 +1430,8 @@ div#primary p {
     padding: 10px 20px 10px 15px;
     color: #cfcfcf;
     white-space: nowrap;
-    background: transparent image-url("__ph/ui2/landing/primary/nav-arrow.png") 100% 50% no-repeat;
-    text-transform: uppercase;
+    background: transparent url(http://assets.misfitwearables.com/assets/landing/primary/nav-arrow-61ddbd8a7208c2595a134a68daab5d14.png) 100% 50% no-repeat;
+    text-transform: uppercase
 }
 
 div#primary .share_content {
@@ -1439,22 +1440,22 @@ div#primary .share_content {
     right: 27px;
     top: -9px;
     color: #fff;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 div#primary .share_content .share-board {
     display: inline-block;
     text-align: left;
-    background-image: image-url("__ph/ui2/landing/primary/nav-arrow.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/nav-arrow-61ddbd8a7208c2595a134a68daab5d14.png);
     background-position: 100% 50%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
 }
 
 div#primary .share_content .share-board li {
     display: inline-block;
     vertical-align: middle;
     height: 18px;
-    width: 40px;
+    width: 40px
 }
 
 div#primary .share_content a.shine_button {
@@ -1471,15 +1472,15 @@ div#primary .share_content a.shine_button {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
     width: 34px;
-    height: 33px;
+    height: 33px
 }
 
 div#primary #home_li {
-    padding-bottom: 15px;
+    padding-bottom: 15px
 }
 
 div#primary #home_li #home_widget {
-    background-image: image-url("__ph/ui2/landing/primary/icon_home.png") !important;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_home-553011b8ee225ca50df23ff0686ed329.png) !important;
     opacity: 1;
     filter: "alpha(opacity=100)";
     -moz-opacity: 1;
@@ -1487,20 +1488,20 @@ div#primary #home_li #home_widget {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
     background-position: center;
-    padding-left: 10px;
+    padding-left: 10px
 }
 
 div#primary .share_widget {
     margin-top: 5px;
-    margin-left: 1px;
+    margin-left: 1px
 }
 
 div#primary .share_widget li {
-    padding-bottom: 15px;
+    padding-bottom: 15px
 }
 
 div#primary #find_store_widget {
-    background-image: image-url("__ph/ui2/landing/primary/findstore.png") !important;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/findstore-8eb73c709f610ce80f97b32908ba618e.png) !important;
     opacity: 1;
     filter: "alpha(opacity=100)";
     -moz-opacity: 1;
@@ -1508,11 +1509,11 @@ div#primary #find_store_widget {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
     background-position: center;
-    padding-left: 10px;
+    padding-left: 10px
 }
 
 div#primary #buy_widget {
-    background-image: image-url("__ph/ui2/landing/primary/icon_buy.png") !important;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_buy-2af1f189d15ecb9865a90c193ebbb67e.png) !important;
     opacity: 1;
     filter: "alpha(opacity=100)";
     -moz-opacity: 1;
@@ -1520,11 +1521,11 @@ div#primary #buy_widget {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     zoom: 1;
     background-position: center;
-    padding-left: 10px;
+    padding-left: 10px
 }
 
 div#primary #share_widget_heart {
-    background-image: image-url("__ph/ui2/landing/primary/icon_share.png") !important;
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_share-5567e2d5a62a8f8c8849d7b0ac688965.png) !important;
     background-repeat: no-repeat;
     background-position: center;
     padding-left: 10px;
@@ -1533,66 +1534,99 @@ div#primary #share_widget_heart {
     -moz-opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    zoom: 1;
+    zoom: 1
 }
 
 div#primary #facebookshare {
-    background-image: image-url("__ph/ui2/landing/primary/icon_fb.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_fb-d6e980505285d114f030615de87fca34.png);
     background-size: 9px 17px;
     background-position: 50% 50%;
-    width: 36px;
+    width: 36px
 }
 
 div#primary #twittershare {
-    background-image: image-url("__ph/ui2/landing/primary/icon_twitter.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_twitter-29e26ece0284629d50a19926b47ed52c.png);
     background-repeat: no-repeat;
-    background-size: 20px 15px;
+    background-size: 20px 15px
 }
 
 div#primary #pinterestshare {
-    background-image: image-url("__ph/ui2/landing/primary/icon_pinterest.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_pinterest-3f9878bfdf8022bdb3710de00043d40a.png);
     background-repeat: no-repeat;
-    background-size: 13px 17px;
+    background-size: 13px 17px
 }
 
 div#primary #googleshare {
-    background-image: image-url("__ph/ui2/landing/primary/icon_google.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_google-019d40087b38d7675243e71d09f3ed32.png);
     background-repeat: no-repeat;
-    background-size: 18px 17px;
+    background-size: 18px 17px
 }
 
 div#primary #mailshare {
-    background-image: image-url("__ph/ui2/landing/primary/icon_letter.png");
+    background-image: url(http://assets.misfitwearables.com/assets/landing/primary/icon_letter-d045759a96fe43bd833a414675fddfeb.png);
     background-repeat: no-repeat;
     background-size: 18px 12px;
     margin-right: 20px;
-    border-right: none;
-}
-
-#title_4 {
-    width: 330px;
+    border-right: none
 }
 
 .locale {
     float: right;
-    padding-top: 0.2em;
+    padding-top: 0.2em
 }
 
-
-
-
-
-#show_video_button {
-    display: block;
-    margin-left:0px;
-    margin-top:20px;
-    width: 150px;
-    height: 90px;
-    background: image-url('__ph/landing/show_video.jpg') no-repeat;
+#annoucement_body {
+    width: 682px
 }
 
-#show_video_button:hover {
-    background: image-url('__ph/landing/show_video_hover.jpg') no-repeat;
+#fancybox-wrap {
+    padding: 32px
+}
+
+.announcement {
+    width: 100%;
+    height: 49px;
+    background-color: white;
+    -moz-box-shadow: 0 1px 1px 0px #b7b7b7;
+    -webkit-box-shadow: 0 1px 1px 0px #b7b7b7;
+    box-shadow: 0 1px 1px 0px #b7b7b7
+}
+
+.announcement_inner {
+    padding-top: 18px;
+    font-family: "GothamLight", sans-serif;
+    font-size: 14px;
+    color: #212121
+}
+
+.ann_title {
+    font-family: "GothamBold", sans-serif;
+    font-size: 14px;
+    color: #fe4600
+}
+
+.annoucement_title {
+    font-family: "GothamBook", sans-serif;
+    font-size: 20px;
+    color: #fe4600;
+    padding-bottom: 7px
+}
+
+.annoucement_description {
+    font-family: "GothamMedium", sans-serif;
+    font-size: 16px;
+    color: #333333;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #c4c4c4
+}
+
+.annoucement_info {
+    font-family: "GothamLight", sans-serif;
+    font-size: 14px;
+    color: #212121;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    line-height: 22px
 }
 
 
