@@ -1,10 +1,9 @@
 // define variables
-
 function doWithCurrentPageBeforeScroll() {
     try {
         switch (global_info.current_page) {
         case -1:
-            localization_obj.hide_top_popup();
+            localization_obj.hide_top_popup(), intro_shine_obj.goaway();
             break;
         case 1:
             wear_it_any_where_obj.goaway();
@@ -100,7 +99,7 @@ function initHeight() {
             s = "#" + r + " .carousel_board";
         $(s).css("height", parseInt(global_info.main_height))
     }
-    $("div#primary").css("top", t), $(".main_page").css("height", parseInt(global_info.main_height)), $(".effortless_image_background").css("height", parseInt(global_info.main_height)), $(".effortless_column").css("height", parseInt(global_info.main_height)), $(".image_background img").css("height", parseInt(global_info.main_height)), $(".image_background").css("height", parseInt(global_info.main_height)), $("#introduction_of_shine").css("height", n), $("#introduction_of_shine_background").css("height", n), $("#accessories .title.headline").css("padding-top", (global_info.main_height - 550) / 2), $("#shine_and_you_info_wrap").css("padding-top", (global_info.main_height - 485) / 2), $("#time_container").css("margin-top", (global_info.main_height - 690) / 2), $("#buy_your_shine_now").css("height", e), $("#buy_content").css("margin-top", (e - 390) / 2), $("#built_to_last_a_lifetime .adv").css("top", parseInt(global_info.main_height) - 330)
+    $("div#primary").css("top", t), $(".main_page").css("height", parseInt(global_info.main_height)), $(".effortless_image_background").css("height", parseInt(global_info.main_height)), $(".effortless_column").css("height", parseInt(global_info.main_height)), $(".image_background img").css("height", parseInt(global_info.main_height)), $(".image_background").css("height", parseInt(global_info.main_height)), $("#introduction_of_shine").css("height", n), $("#introduction_of_shine_background").css("height", n), $("#introduction_of_shine .carousel_board").css("height", n), $("#introduction_of_shine .info_div").css("padding-top", (n - $("#introduction_of_shine .info_div").first().height()) / 2), $("#accessories .title.headline").css("padding-top", (global_info.main_height - 550) / 2), $("#shine_and_you_info_wrap").css("padding-top", (global_info.main_height - 485) / 2), $("#time_container").css("margin-top", (global_info.main_height - 690) / 2), $("#buy_your_shine_now").css("height", e), $("#buy_content").css("margin-top", (e - 390) / 2), $("#built_to_last_a_lifetime .adv").css("top", parseInt(global_info.main_height) - 330)
 }
 
 function reDrawDotNav() {
@@ -251,6 +250,9 @@ function handleLeftRight(e) {
 
 function handleSlider(e) {
     switch (global_info.current_page) {
+    case -1:
+        animation.is_transform_left_right = !0, intro_shine_obj.slideByDirection(e);
+        break;
     case 1:
         animation.is_transform_left_right = !0, wear_it_any_where_obj.slideByDirection(e);
         break;
@@ -275,16 +277,68 @@ var global_info = {
         isTransform: !1,
         is_transform_left_right: !1
     }, id_reset_istransform, intro_shine_obj = function () {
-        var e = !1;
+        var e = !1,
+            t, n, r = 4600,
+            i = 0,
+            s = !0,
+            o = !1,
+            u = !0;
         return {
             initPanel: function () {
-                e || (e = !0, $("#introduction_of_shine_background_lazy").lazy({
-                    bind: "event",
-                    visibleOnly: !1,
-                    afterLoad: function (e) {
-                        doWithNextPageBeforeScroll(), e.hide(), $("#introduction_of_shine_background").addClass("lazy_background"), $("#introduction_of_shine_loading_screen").fadeOut()
+                o = !0;
+                if (!e) {
+                    e = !0;
+                    var t = this;
+                    $("#introduction_of_shine .introduction_of_shine_background_lazy").lazy({
+                        bind: "event",
+                        visibleOnly: !1,
+                        afterLoad: function (e) {
+                            i++, e.hide(), i == 2 && ($("#introduction_of_shine .carousel_board").addClass("lazy_background"), t.initSlider(), doWithNextPageBeforeScroll())
+                        }
+                    })
+                } else this.slider && this.play()
+            },
+            initSlider: function () {
+                var e = this;
+                $("#flex_introduction_of_shine").flexslider({
+                    animation: "slide",
+                    controlNav: !0,
+                    smoothHeight: !1,
+                    slideshow: !1,
+                    slideshowSpeed: r,
+                    animationSpeed: 800,
+                    touch: !0,
+                    start: function (t) {
+                        $("#introduction_of_shine_loading_screen").fadeOut(), e.play(), $("#introduction_of_shine .pause_div").click(function () {
+                            u ? (e.pause(), u = !u, $(this).removeClass("play")) : (u = !u, $(this).addClass("play"), e.play())
+                        })
+                    },
+                    before: function (t) {
+                        e.resetTimer(), animation.is_transform_left_right = !0, s || (s = !0, t.pause())
+                    },
+                    after: function (n) {
+                        clearRequestTimeout(t), t = requestTimeout(function () {
+                            animation.is_transform_left_right = !1
+                        }, 500), e.play()
                     }
-                }))
+                }), this.slider = $("#flex_introduction_of_shine").data("flexslider")
+            },
+            slideByDirection: function (e) {
+                this.slider.flexAnimate(this.slider.getTarget(e))
+            },
+            resetTimer: function () {
+                clearRequestTimeout(n), $("#introduction_of_shine .timer").removeClass("move"), $("#introduction_of_shine .mask").removeClass("move"), $("#introduction_of_shine .rotator").removeClass("move"), $("#introduction_of_shine .rotator").removeClass("running")
+            },
+            pause: function () {
+                o && u && (this.resetTimer(), s || (this.slider.pause(), s = !0))
+            },
+            play: function () {
+                o && u && s && ($("#introduction_of_shine .rotator").addClass("running"), clearRequestTimeout(n), n = requestTimeout(function () {
+                    $("#introduction_of_shine .timer").addClass("move"), $("#introduction_of_shine .mask").addClass("move"), $("#introduction_of_shine .rotator").addClass("move")
+                }, 2e3), s = !1, this.slider.play())
+            },
+            goaway: function () {
+                this.slider && this.pause(), o = !1
             }
         }
     }(),
@@ -337,7 +391,7 @@ var global_info = {
                         type: "video/ogg",
                         src: "http://assets.misfitwearables.com/assets/landing/product_specs/rotation-1042abe066c4adb88d6d6963bac87b7f.ogv"
                     }]);
-                    if (!e.s.src) {
+                    if (!e) {
                         s();
                         return
                     }
@@ -660,7 +714,7 @@ var global_info = {
                         type: "video/ogg",
                         src: "http://assets.misfitwearables.com/assets/landing/your_personal_timeline/demo-60935874a23f604a31c66aba811d6c74.ogv"
                     }]);
-                    if (!e.s.src) {
+                    if (!e) {
                         f();
                         return
                     }
@@ -920,9 +974,9 @@ var global_info = {
                 }), $(".accessories_images").click(function () {
                     return !1
                 }), $("#black_leather_button").click(function () {
-                    $("#accessories_images_1 img").attr("src", "http://assets.misfitwearables.com/assets/landing/accessorize/black_leatherband-b997454240992ea859dd0d9b1221e32d.png"), $("#black_headline").addClass("active"), $("#black_description").addClass("active"), $("#tan_headline").removeClass("active"), $("#tan_description").removeClass("active"), $("#tan_headline").hide(), $("#tan_description").hide(), $("#black_headline").show(), $("#black_description").show()
+                    $("#accessories_images_1 img").attr("src", "http://assets.misfitwearables.com/assets/landing/accessorize/black_leatherband-093c72d74ee1d5a5154ffc1678b17a35.png"), $("#black_headline").addClass("active"), $("#black_description").addClass("active"), $("#tan_headline").removeClass("active"), $("#tan_description").removeClass("active"), $("#tan_headline").hide(), $("#tan_description").hide(), $("#black_headline").show(), $("#black_description").show()
                 }), $("#tan_leather_button").click(function () {
-                    $("#accessories_images_1 img").attr("src", "http://assets.misfitwearables.com/assets/landing/accessorize/brown_leatherband-83bfbe96050e1fb0fc19040f662c5198.png"), $("#black_headline").removeClass("active"), $("#black_description").removeClass("active"), $("#tan_headline").addClass("active"), $("#tan_description").addClass("active"), $("#tan_headline").show(), $("#tan_description").show(), $("#black_headline").hide(), $("#black_description").hide()
+                    $("#accessories_images_1 img").attr("src", "http://assets.misfitwearables.com/assets/landing/accessorize/brown_leatherband-f2eed49727d6e9179cc3877b3a47cc17.png"), $("#black_headline").removeClass("active"), $("#black_description").removeClass("active"), $("#tan_headline").addClass("active"), $("#tan_description").addClass("active"), $("#tan_headline").show(), $("#tan_description").show(), $("#black_headline").hide(), $("#black_description").hide()
                 }))
             }
         }
@@ -945,6 +999,10 @@ var global_info = {
 $(window).load(function () {
     global_info.current_page = calCurrentPageIndex($("html").scrollTop()), reDrawDotNav(), doAfterScroll(), $(window).scroll(function () {
         return global_info.is_first_load && (global_info.current_page = calCurrentPageIndex($("html").scrollTop()), reDrawDotNav(), doAfterScroll(), global_info.is_first_load = !1), !1
+    }), $("#flex_introduction_of_shine #list_carousels").click(function (e) {
+        var t = $(window).width(),
+            n = $(window).height();
+        intro_shine_obj.pause(), e.pageX < t / 2 ? intro_shine_obj.slideByDirection("prev") : intro_shine_obj.slideByDirection("next")
     }), $("#flex_wear_it_anywhere #list_carousels").click(function (e) {
         var t = $(window).width(),
             n = $(window).height();
